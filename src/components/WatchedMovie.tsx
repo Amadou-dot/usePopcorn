@@ -3,8 +3,10 @@ import { baseImgUrl } from '../env';
 
 export default function WatchedMovie({
   movie,
+  handleRemoveFromWatchlist
 }: {
   movie: WatchlistMovieDetails;
+  handleRemoveFromWatchlist: (id:number) => void
 }) {
   return (
     <li key={movie.id}>
@@ -16,7 +18,7 @@ export default function WatchedMovie({
       <div>
         <p>
           <span>⭐️</span>
-          <span>{movie.vote_average}</span>
+          <span>{movie.vote_average?.toFixed(1)}</span>
         </p>
         <p>
           <span>🌟</span>
@@ -27,6 +29,7 @@ export default function WatchedMovie({
           <span>{movie.runtime} min</span>
         </p>
       </div>
+      <button className="btn-delete" onClick={() => handleRemoveFromWatchlist(movie.id)}>X</button>
     </li>
   );
 }

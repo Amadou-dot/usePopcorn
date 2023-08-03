@@ -21,15 +21,15 @@ export default function Summary({
         </p>
         <p>
           <span>⭐️</span>
-          <span>{avgRating}</span>
+          <span>{avgRating.toFixed(1)}</span>
         </p>
         <p>
           <span>🌟</span>
-          <span>{avgUserRating}</span>
+          <span>{avgUserRating.toFixed(1)}</span>
         </p>
         <p>
           <span>⏳</span>
-          <span>{avgRuntime} min</span>
+          <span>{Math.trunc(avgRuntime)} min</span>
         </p>
       </div>
     </div>
